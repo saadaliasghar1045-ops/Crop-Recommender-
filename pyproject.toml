@@ -8,7 +8,7 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
-    "fastapi>=0.141.1",
+    "fastapi[standard]>=0.141.1",
     "jupyter>=1.1.1",
     "matplotlib>=3.11.2",
     "numpy>=2.5.3",
@@ -24,3 +24,6 @@ crop-recommender = "crop_recommender:main"
 [build-system]
 requires = ["uv_build>=0.12.18,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.fastapi]
+entrypoint = "backend.main:app"

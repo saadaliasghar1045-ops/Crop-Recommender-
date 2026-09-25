@@ -1,8 +1,13 @@
 from fastapi import FastAPI
+from backend.schemas import model_input
 
 app = FastAPI()
 
 
-@app.get("/")
-def home():
-    return {"message": "Crop Recommender API is running!"}
+@app.post("/predict")
+def home(data : model_input):
+    out = {
+        "message":"This endpoint is working",
+        "Input":data
+    }
+    return out
